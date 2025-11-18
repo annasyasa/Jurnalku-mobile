@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_mobile/settings.dart';
 import 'package:jurnalku_mobile/panduan.dart';
+import 'package:jurnalku_mobile/permintaan_saksi.dart';
 
-import 'permintaan_saksi.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -40,14 +41,6 @@ class Login extends StatelessWidget {
 
             const SizedBox(width: 10),
 
-            const CircleAvatar(
-              radius: 16,
-              backgroundColor: Colors.grey,
-              child: Icon(Icons.person, color: Colors.white),
-            ),
-
-            const SizedBox(width: 10),
-
             PopupMenuButton(
               icon: const Icon(Icons.more_vert, color: Colors.black),
               itemBuilder: (context) => [
@@ -62,17 +55,17 @@ class Login extends StatelessWidget {
                     });
                   },
                 ),
-                // PopupMenuItem(
-                //   child: const Text("Setting"),
-                //   onTap: () {
-                //     Future.delayed(Duration.zero, () {
-                //       Navigator.push(
-                //         context,
-                //         MaterialPageRoute(builder: (_) => const Setting()),
-                //       );
-                //     });
-                //   },
-                // ),
+                PopupMenuItem(
+                  child: const Text("Setting"),
+                  onTap: () {
+                    Future.delayed(Duration.zero, () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const SettingsPage()),
+                      );
+                    });
+                  },
+                ),
                 PopupMenuItem(
                   child: const Text("Permintaan Saksi"),
                   onTap: () {

@@ -5,6 +5,50 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Login Page'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min, 
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const PanduanPengguna()),
+                // );
+              },
+              child: const Text('Panduan'),
+            ),
+
+            const SizedBox(height: 16), 
+
+            ElevatedButton(
+              onPressed: () {
+                      // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const PanduanPengguna()),
+                // );
+              },
+              child: const Text('Setting'),
+            ),
+
+            const SizedBox(height: 16),
+
+            ElevatedButton(
+              onPressed: () {
+                      // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const PanduanPengguna()),
+                // );
+              },
+              child: const Text('Permintaan Saksi'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

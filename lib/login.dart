@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jurnalku_mobile/settings.dart';
+import 'package:jurnalku_mobile/panduan.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -16,10 +17,10 @@ class Login extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => const PanduanPengguna()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PanduanPengguna()),
+                );
               },
               child: const Text('Panduan'),
             ),

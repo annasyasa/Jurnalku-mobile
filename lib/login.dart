@@ -48,20 +48,20 @@ class Login extends StatelessWidget {
 
             const SizedBox(width: 10),
 
-            // PopupMenuButton(
-            //   icon: const Icon(Icons.more_vert, color: Colors.black),
-            //   itemBuilder: (context) => [
-            //     PopupMenuItem(
-            //       child: const Text("Panduan"),
-            //       onTap: () {
-            //         Future.delayed(Duration.zero, () {
-            //           Navigator.push(
-            //             context,
-            //             MaterialPageRoute(builder: (_) => const Panduan()),
-            //           );
-            //         });
-            //       },
-            //     ),
+            PopupMenuButton(
+              icon: const Icon(Icons.more_vert, color: Colors.black),
+              itemBuilder: (context) => [
+                PopupMenuItem(
+                  child: const Text("Panduan"),
+                  onTap: () {
+                    Future.delayed(Duration.zero, () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const PanduanPengguna()),
+                      );
+                    });
+                  },
+                ),
                 // PopupMenuItem(
                 //   child: const Text("Setting"),
                 //   onTap: () {
@@ -86,9 +86,9 @@ class Login extends StatelessWidget {
                 ),
               ],
             ),
-          // ],
+          ],
         ),
-      // ),
+      ),
 
       body: const Center(
         child: Text("Klik menu ⋮ untuk pindah halaman"),

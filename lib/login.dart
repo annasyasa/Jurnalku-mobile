@@ -3,6 +3,7 @@ import 'package:jurnalku_mobile/progress_belajar.dart';
 import 'package:jurnalku_mobile/settings.dart';
 import 'package:jurnalku_mobile/panduan.dart';
 import 'package:jurnalku_mobile/permintaan_saksi.dart';
+import 'package:jurnalku_mobile/search.dart';
 
 
 class Login extends StatelessWidget {
@@ -85,6 +86,17 @@ class Login extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => const ProgressBelajar()),
+                      );
+                    });
+                  },
+                ),
+                PopupMenuItem(
+                  child: const Text("Search"),
+                  onTap: () {
+                    Future.delayed(Duration.zero, () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const DirektoriSiswaPage()),
                       );
                     });
                   },

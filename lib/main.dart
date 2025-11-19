@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
-
+// import 'package:jurnalku_mobile/search.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'tes',
+      debugShowCheckedModeBanner: false,
       home: Login(),
     );
   }

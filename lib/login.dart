@@ -4,6 +4,7 @@ import 'package:jurnalku_mobile/settings.dart';
 import 'package:jurnalku_mobile/panduan.dart';
 import 'package:jurnalku_mobile/permintaan_saksi.dart';
 import 'package:jurnalku_mobile/search.dart';
+import 'package:jurnalku_mobile/catatan_sikap.dart';
 
 
 class Login extends StatelessWidget {
@@ -86,6 +87,17 @@ class Login extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => const ProgressBelajar()),
+                      );
+                    });
+                  },
+                ),
+                PopupMenuItem(
+                  child: const Text("Catatan Sikap"),
+                  onTap: () {
+                    Future.delayed(Duration.zero, () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const CatatanSikapPage()),
                       );
                     });
                   },

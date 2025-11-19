@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_mobile/catatan_sikap.dart';
 import 'package:jurnalku_mobile/settings.dart';
 import 'package:jurnalku_mobile/panduan.dart';
 import 'package:jurnalku_mobile/permintaan_saksi.dart';
@@ -73,6 +74,17 @@ class Login extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => const PermintaanSaksi()),
+                      );
+                    });
+                  },
+                ),
+                PopupMenuItem(
+                  child: const Text("Catatan Sikap"),
+                  onTap: () {
+                    Future.delayed(Duration.zero, () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const CatatanSikapPage()),
                       );
                     });
                   },

@@ -5,6 +5,7 @@ import 'package:jurnalku_mobile/panduan.dart';
 import 'package:jurnalku_mobile/permintaan_saksi.dart';
 import 'package:jurnalku_mobile/search.dart';
 import 'package:jurnalku_mobile/catatan_sikap.dart';
+import 'package:jurnalku_mobile/jurnal_pembiasaan.dart';
 
 
 class Login extends StatelessWidget {
@@ -109,6 +110,17 @@ class Login extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => const DirektoriSiswaPage()),
+                      );
+                    });
+                  },
+                ),
+                PopupMenuItem(
+                  child: const Text("Jurnal Pembiasaan"),
+                  onTap: () {
+                    Future.delayed(Duration.zero, () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const JurnalPembiasaanPage()),
                       );
                     });
                   },

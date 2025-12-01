@@ -177,9 +177,7 @@ class JurnalPembiasaanPage extends StatelessWidget {
                   },
                   children: [
                     TableRow(
-                      decoration: BoxDecoration(
-                        color: Color(0xFFE8F0FE),
-                      ),
+                      decoration: BoxDecoration(color: Color(0xFFE8F0FE)),
                       children: const [
                         Padding(
                           padding: EdgeInsets.all(12),
@@ -245,9 +243,7 @@ class JurnalPembiasaanPage extends StatelessWidget {
                   },
                   children: [
                     TableRow(
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
-                      ),
+                      decoration: BoxDecoration(color: Color(0xFFE8F0FE)),
                       children: const [
                         Padding(
                           padding: EdgeInsets.all(12),
@@ -272,6 +268,7 @@ class JurnalPembiasaanPage extends StatelessWidget {
                         ),
                       ],
                     ),
+
                     TableRow(
                       children: [
                         Padding(
@@ -288,9 +285,41 @@ class JurnalPembiasaanPage extends StatelessWidget {
                   ],
                 ),
               ),
-
               SizedBox(height: 20),
-              Text("D. Poin", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Wrap(
+                spacing: 20,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.circle, color: Colors.green, size: 15),
+                      SizedBox(width: 6),
+                      Text("A : Disetujui"),
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.circle, color: Colors.yellow, size: 15),
+                      SizedBox(width: 6),
+                      Text("P : Tertunda"),
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.circle, color: Colors.red, size: 15),
+                      SizedBox(width: 6),
+                      Text("R : Revisi"),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Text(
+                "D. Poin",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               SizedBox(height: 12),
 
               // ======== TABEL D =========
@@ -305,34 +334,53 @@ class JurnalPembiasaanPage extends StatelessWidget {
                 },
                 children: [
                   TableRow(
-                    decoration: BoxDecoration(color: Colors.grey[300]),
+                    decoration: BoxDecoration(color: Color(0xFFE8F0FE)),
                     children: [
                       Padding(
                         padding: EdgeInsets.all(8),
-                        child: Text("Kategori Poin", style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text(
+                          "Kategori Poin",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.all(8),
-                        child: Text("M1", style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text(
+                          "M1",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.all(8),
-                        child: Text("M2", style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text(
+                          "M2",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.all(8),
-                        child: Text("M3", style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text(
+                          "M3",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.all(8),
-                        child: Text("M4", style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: Text(
+                          "M4",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ],
                   ),
 
                   // Isi tabel poin
-                  poinRow('(5) mengerjakan project/adanya update progress belajar'),
-                  poinRow('(1 - 5) poin dari pertanyaan atau laporan pengetahuan materi'),
+                  poinRow(
+                    '(5) mengerjakan project/adanya update progress belajar',
+                  ),
+                  poinRow(
+                    '(1 - 5) poin dari pertanyaan atau laporan pengetahuan materi',
+                  ),
                   poinRow('Jumlah poin minggu ini'),
                   poinRow('Jumlah poin ceklist pembiasaan'),
                   poinRow('Jumlah keseluruhan poin'),
@@ -358,7 +406,7 @@ TableRow poinRow(String text) {
   );
 }
 
-// ===== Kotak Status Harian =====
+//Kotak Status Harian
 Widget tidakTerisi(String number) {
   return Container(
     width: 60,
@@ -370,7 +418,11 @@ Widget tidakTerisi(String number) {
     child: Stack(
       children: [
         Center(child: Text(number, style: TextStyle(fontSize: 18))),
-        Positioned(right: 3, top: 3, child: Icon(Icons.close, size: 14, color: Colors.red)),
+        Positioned(
+          right: 3,
+          top: 3,
+          child: Icon(Icons.close, size: 14, color: Colors.red),
+        ),
       ],
     ),
   );
@@ -387,7 +439,11 @@ Widget sudahTerisi(String number) {
     child: Stack(
       children: [
         Center(child: Text(number, style: TextStyle(fontSize: 18))),
-        Positioned(right: 3, top: 3, child: Icon(Icons.check, size: 14, color: Colors.green)),
+        Positioned(
+          right: 3,
+          top: 3,
+          child: Icon(Icons.check, size: 14, color: Colors.green),
+        ),
       ],
     ),
   );
@@ -401,6 +457,11 @@ Widget belumTerisi(String number) {
       color: Colors.grey.shade300,
       borderRadius: BorderRadius.circular(6),
     ),
-    child: Center(child: Text(number, style: TextStyle(fontSize: 18, color: Colors.black54))),
+    child: Center(
+      child: Text(
+        number,
+        style: TextStyle(fontSize: 18, color: Colors.black54),
+      ),
+    ),
   );
 }

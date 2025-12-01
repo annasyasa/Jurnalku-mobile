@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_mobile/dashboard.dart';
+import 'package:jurnalku_mobile/panduan.dart';
+import 'package:jurnalku_mobile/search.dart';
 import 'login.dart';
 // import 'package:jurnalku_mobile/search.dart';
 
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'tes',
 
-      home: Login(),
+      home: Dashboard(),
     );
   }
 }

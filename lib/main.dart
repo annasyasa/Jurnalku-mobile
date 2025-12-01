@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'home.dart';
 // import 'package:jurnalku_mobile/search.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'tes',
 
-      home: Login(),
+      home: Home(),
     );
   }
 }

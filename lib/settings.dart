@@ -24,10 +24,40 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pengaturan Akun"),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        elevation: 0,
+        elevation: 1,
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            Icon(Icons.home, color: Colors.black),
+            SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: const [
+                  Text(
+                    "Mochamad Reivaldy Zaen",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    "PPLG XII-3",
+                    style: TextStyle(color: Colors.black54, fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 10),
+            const CircleAvatar(
+              radius: 16,
+              backgroundColor: Colors.grey,
+              child: Icon(Icons.person, color: Colors.white),
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -41,66 +71,79 @@ class _SettingsPageState extends State<SettingsPage> {
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
               ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Column(
                 children: [
-                  // LEFT SIDE
-                  Column(
+                  Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Informasi Profil",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-
-                      // FOTO PROFIL
-                      Stack(
-                        alignment: Alignment.bottomRight,
+                      // LEFT SIDE
+                      Column(
                         children: [
-                          const CircleAvatar(
-                            radius: 50,
-                            backgroundImage: AssetImage('images/profile.png'),
+                          const Text(
+                            "Informasi Profil",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(6),
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                            ),
-                            child: const Icon(
-                              Icons.edit,
-                              size: 18,
-                              color: Colors.blue,
-                            ),
+                          const SizedBox(height: 20),
+
+                          // FOTO PROFIL
+                          Stack(
+                            alignment: Alignment.bottomRight,
+                            children: [
+                              const CircleAvatar(
+                                radius: 50,
+                                backgroundImage: AssetImage(
+                                  'images/profile.png',
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                                child: const Icon(
+                                  Icons.edit,
+                                  size: 18,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          const SizedBox(height: 10),
+                          const Text(
+                            "Klik untuk mengubah foto",
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
                           ),
                         ],
                       ),
 
-                      const SizedBox(height: 10),
-                      const Text(
-                        "Klik untuk mengubah foto",
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
+                      const SizedBox(width: 35),
+
+                      // RIGHT SIDE (READONLY FIELDS)
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    buildProfileInfoItem("Nama", nama),
+                                    buildProfileInfoItem("NIS", nis),
+                                    buildProfileInfoItem("Rombel", rombel),
+                                    buildProfileInfoItem("Rayon", rayon),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
-                  ),
-
-                  const SizedBox(width: 35),
-
-                  // RIGHT SIDE (READONLY FIELDS)
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        buildProfileInfoItem("Nama", nama),
-                        buildProfileInfoItem("NIS", nis),
-                        buildProfileInfoItem("Rombel", rombel),
-                        buildProfileInfoItem("Rayon", rayon),
-                      ],
-                    ),
                   ),
                 ],
               ),
@@ -216,7 +259,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  // ===================== PROFILE INFO ITEM =====================
+  //PROFILE INFO ITEM
   Widget buildProfileInfoItem(String label, String value) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),

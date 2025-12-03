@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_mobile/panduan_mengisi_jurnal.dart';
 
 class PanduanPengguna extends StatelessWidget {
   const PanduanPengguna({super.key});
@@ -217,6 +218,11 @@ class PanduanPengguna extends StatelessWidget {
                   ),
                 ],
               ),
+              child:GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PanduanMengisiJurnal())
+                  );
+                },
               child: Row(
                 children: [
                   Container(
@@ -250,6 +256,7 @@ class PanduanPengguna extends StatelessWidget {
                     ],
                   ),
                 ],
+              ),
               ),
             ),
             SizedBox(height: 20),

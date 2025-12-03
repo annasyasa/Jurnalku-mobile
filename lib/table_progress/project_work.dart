@@ -82,113 +82,61 @@ class ProjectWork extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text("Project Work", style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         elevation: 1,
-        automaticallyImplyLeading: false,
-        title: Row(
-          children: [
-            const Icon(Icons.home, color: Colors.black),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  Text(
-                    "Mochamad Reivaldy Zaen",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
-                    "PPLG XII-3",
-                    style: TextStyle(color: Colors.black54, fontSize: 12),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(width: 10),
-            const CircleAvatar(
-              radius: 16,
-              backgroundColor: Colors.grey,
-              child: Icon(Icons.person, color: Colors.white),
-            ),
-          ],
-        ),
       ),
 
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              const Text(
-                "Project Work",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 20),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
 
-              ...dummyData.entries.map(
-                (entry) => Column(
-                  children: [
-                    _buildTile(entry.key, entry.value),
-                    const SizedBox(height: 10),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTile(String title, List<Map<String, String>> items) {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: ExpansionTile(
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
-        childrenPadding: EdgeInsets.zero,
-        children: items.map((item) {
-          return Container(
-            margin: const EdgeInsets.only(bottom: 10),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: const BoxDecoration(
-              border: Border(bottom: BorderSide(color: Colors.black12)),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildDetail("Kompetensi", item["kompetensi"]!),
-                _buildDetail("Guru", item["guru"]!),
-                _buildDetail("Tanggal", item["tanggal"]!),
-                _buildDetail("Status", item["status"]!, highlight: true),
-                _buildDetail("Catatan Guru", item["catatanGuru"]!),
-                _buildDetail("Catatan Siswa", item["catatanSiswa"]!),
-              ],
-            ),
-          );
+        children: dummyData.entries.map((entry) {
+          return _buildDateSection(entry.key, entry.value);
         }).toList(),
       ),
     );
   }
 
-  Widget _buildDetail(String label, String value, {bool highlight = false}) {
+  Widget _buildDateSection(String tanggal, List<Map<String, String>> items) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      elevation: 2,
+      margin: const EdgeInsets.only(bottom: 12),
+
+      child: ExpansionTile(
+        title: Text(tanggal, style: const TextStyle(fontWeight: FontWeight.bold)),
+
+        children: items.map((item) => _buildItemDetail(item)).toList(),
+      ),
+    );
+  }
+
+  Widget _buildItemDetail(Map<String, String> item) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _infoRow("Kompetensi", item["kompetensi"]!),
+          _infoRow("Guru", item["guru"]!),
+          _infoRow("Tanggal", item["tanggal"]!),
+          _infoRow("Status", item["status"]!, highlight: true),
+          _infoRow("Catatan Guru", item["catatanGuru"]!),
+          _infoRow("Catatan Siswa", item["catatanSiswa"]!),
+          const Divider(),
+        ],
+      ),
+    );
+  }
+
+  Widget _infoRow(String label, String value, {bool highlight = false}) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(width: 120, child: Text(label, style: const TextStyle(fontWeight: FontWeight.w600))),
-          Expanded(
-            child: Text(
-              value,
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
+          SizedBox(width: 120, child: Text(label, style: const TextStyle(fontWeight: FontWeight.bold))),
+          Expanded(child: Text(value)),
         ],
       ),
     );

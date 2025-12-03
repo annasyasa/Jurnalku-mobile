@@ -8,144 +8,86 @@ import 'package:jurnalku_mobile/search.dart';
 import 'package:jurnalku_mobile/catatan_sikap.dart';
 import 'package:jurnalku_mobile/jurnal_pembiasaan.dart';
 
-
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
-        automaticallyImplyLeading: false,
-        title: Row(
+      drawer: Drawer(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+        ),
+        child: ListView(
+          padding: EdgeInsets.zero,
           children: [
-            const Icon(Icons.home, color: Colors.black),
-            const SizedBox(width: 12),
 
-            Expanded(
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue.shade600),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
+                  CircleAvatar(
+                    radius: 28,
+                    backgroundColor: Colors.white,
+                    child: Icon(Icons.person, size: 32),
+                  ),
+                  SizedBox(height: 12),
                   Text(
-                    "PPLG XII-3",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    "Mochamad Reivaldy Zaen",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                   Text(
                     "PPLG XII-3",
-                    style: TextStyle(color: Colors.black54, fontSize: 12),
+                    style: TextStyle(fontSize: 13, color: Colors.white70),
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(width: 10),
+            _buildMenu(context, Icons.menu_book, "Panduan", const PanduanPengguna()),
+            _buildMenu(context, Icons.settings, "Setting", const SettingsPage()),
+            _buildMenu(context, Icons.account_box, "Permintaan Saksi", const PermintaanSaksi()),
+            _buildMenu(context, Icons.bar_chart, "Progress", const ProgressBelajar()),
+            _buildMenu(context, Icons.note_alt, "Catatan Sikap", const CatatanSikapPage()),
+            _buildMenu(context, Icons.search, "Search", const DirektoriSiswaPage()),
+            _buildMenu(context, Icons.library_books, "Jurnal Pembiasaan", const JurnalPembiasaanPage()),
+            const Divider(),
+            _buildMenu(context, Icons.logout, " Login", const Login()),
+          ],
+        ),
+      ),
 
-            PopupMenuButton(
-              icon: const Icon(Icons.more_vert, color: Colors.black),
-              itemBuilder: (context) => [
-                PopupMenuItem(
-                  child: const Text("Panduan"),
-                  onTap: () {
-                    Future.delayed(Duration.zero, () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const PanduanPengguna()),
-                      );
-                    });
-                  },
-                ),
-                PopupMenuItem(
-                  child: const Text("Setting"),
-                  onTap: () {
-                    Future.delayed(Duration.zero, () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const SettingsPage()),
-                      );
-                    });
-                  },
-                ),
-                PopupMenuItem(
-                  child: const Text("Permintaan Saksi"),
-                  onTap: () {
-                    Future.delayed(Duration.zero, () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const PermintaanSaksi()),
-                      );
-                    });
-                  },
-                ),
-                PopupMenuItem(
-                  child: const Text("Progress"),
-                  onTap: () {
-                    Future.delayed(Duration.zero, () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const ProgressBelajar()),
-                      );
-                    });
-                  },
-                ),
-                PopupMenuItem(
-                  child: const Text("Catatan Sikap"),
-                  onTap: () {
-                    Future.delayed(Duration.zero, () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const CatatanSikapPage()),
-                      );
-                    });
-                  },
-                ),
-                PopupMenuItem(
-                  child: const Text("Search"),
-                  onTap: () {
-                    Future.delayed(Duration.zero, () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const DirektoriSiswaPage()),
-                      );
-                    });
-                  },
-                ),
-                PopupMenuItem(
-                  child: const Text("Login"),
-                  onTap: () {
-                    Future.delayed(Duration.zero, () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const Login()),
-                      );
-                    });
-                  },
-                ),
-                PopupMenuItem(
-                  child: const Text("Jurnal Pembiasaan"),
-                  onTap: () {
-                    Future.delayed(Duration.zero, () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const JurnalPembiasaanPage()),
-                      );
-                    });
-                  },
-                ),
-              ],
-            ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 1,
+        title: Row(
+          children: [
+            const SizedBox(width: 12),
           ],
         ),
       ),
 
       body: const Center(
-        child: Text("Klik menu ⋮ untuk pindah halaman"),
+        child: Text("Buka Drawer (☰) untuk navigasi "),
       ),
+    );
+  }
+
+  Widget _buildMenu(BuildContext context, IconData icon, String label, Widget page) {
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(label),
+      onTap: () {
+        Navigator.pop(context);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => page),
+        );
+      },
     );
   }
 }

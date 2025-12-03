@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_mobile/panduan_mengisi_jurnal.dart';
 import 'home.dart';
 // import 'package:jurnalku_mobile/search.dart';
 

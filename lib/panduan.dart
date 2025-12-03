@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:jurnalku_mobile/panduan_mengisi_jurnal.dart';
+import 'package:jurnalku_mobile/panduanpengguna/unggah_profile.dart';
+import 'package:jurnalku_mobile/panduanpengguna/ganti_password.dart';
+
 
 class PanduanPengguna extends StatelessWidget {
   const PanduanPengguna({super.key});
@@ -56,7 +60,11 @@ class PanduanPengguna extends StatelessWidget {
           children: [
             Row(
               children: const [
-                Icon(Icons.menu_book_outlined, color: Color(0xFF1C4780), size: 28),
+                Icon(
+                  Icons.menu_book_outlined,
+                  color: Color(0xFF1C4780),
+                  size: 28,
+                ),
                 SizedBox(width: 8),
                 Text(
                   "Panduan Penggunaan",
@@ -107,39 +115,47 @@ class PanduanPengguna extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFEEF4FF),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Icon(
-                      Icons.account_box_outlined,
-                      size: 26,
-                      color: Color(0xFF1C4780),
-                    ),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const UnggahProfile(),
                   ),
-                  const SizedBox(width: 12),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Unggah Profile",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFEEF4FF),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Icon(
+                        Icons.account_box_outlined,
+                        size: 26,
+                        color: Color(0xFF1C4780),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Unggah Profile",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "Panduan untuk mengunggah profile pengguna",
-                        style: TextStyle(fontSize: 13, color: Colors.black54),
-                      ),
-                    ],
-                  ),
-                ],
+                        SizedBox(height: 4),
+                        Text(
+                          "Panduan untuk mengunggah profile pengguna",
+                          style: TextStyle(fontSize: 13, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -157,39 +173,42 @@ class PanduanPengguna extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFEEF4FF),
-                      borderRadius: BorderRadius.circular(10),
+              child: GestureDetector(
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const GantiPassword())),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFEEF4FF),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Icon(
+                        Icons.account_box_outlined,
+                        size: 26,
+                        color: Color(0xFF1C4780),
+                      ),
                     ),
-                    child: const Icon(
-                      Icons.account_box_outlined,
-                      size: 26,
-                      color: Color(0xFF1C4780),
-                    ),
-                  ),
-                  SizedBox(width: 12),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Ganti Password",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
+                    SizedBox(width: 12),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Ganti Password",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "Panduan untuk mengunggah profile pengguna",
-                        style: TextStyle(fontSize: 13, color: Colors.black54),
-                      ),
-                    ],
-                  ),
-                ],
+                        SizedBox(height: 4),
+                        Text(
+                          "Panduan untuk mengunggah profile pengguna",
+                          style: TextStyle(fontSize: 13, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 24),
@@ -409,7 +428,7 @@ class PanduanPengguna extends StatelessWidget {
                 ],
               ),
             ),
-             SizedBox(height: 20),
+            SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.all(16),
               margin: const EdgeInsets.only(bottom: 12),

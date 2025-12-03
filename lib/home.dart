@@ -72,7 +72,7 @@ class Home extends StatelessWidget {
       ),
 
       body: const Center(
-        child: Text("Buka Drawer (☰) untuk navigasi "),
+        child: Text(" KLik Ini Bro (☰)"),
       ),
     );
   }

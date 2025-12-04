@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_mobile/panduanpengguna/kelengkapan_profile.dart';
+import 'package:jurnalku_mobile/panduanpengguna/mengelola_portofolio.dart';
 
-import 'package:jurnalku_mobile/panduan_mengisi_jurnal.dart';
+import 'package:jurnalku_mobile/panduanpengguna/panduan_mengisi_jurnal.dart';
 import 'package:jurnalku_mobile/panduanpengguna/unggah_profile.dart';
 import 'package:jurnalku_mobile/panduanpengguna/ganti_password.dart';
 
@@ -293,6 +295,13 @@ class PanduanPengguna extends StatelessWidget {
                   ),
                 ],
               ),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => KelengkapanProfile(),
+                  ),
+                ),
               child: Row(
                 children: [
                   Container(
@@ -326,6 +335,7 @@ class PanduanPengguna extends StatelessWidget {
                     ],
                   ),
                 ],
+               ),
               ),
             ),
             SizedBox(height: 20),
@@ -343,6 +353,14 @@ class PanduanPengguna extends StatelessWidget {
                   ),
                 ],
               ),
+
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MengelolaPortofolio(),
+                  ),
+                ),
               child: Row(
                 children: [
                   Container(
@@ -378,6 +396,8 @@ class PanduanPengguna extends StatelessWidget {
                 ],
               ),
             ),
+            ),
+            
             SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.all(16),

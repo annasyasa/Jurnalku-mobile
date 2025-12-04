@@ -14,7 +14,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Row(
           children: [
-            Icon(Icons.home, color: Colors.black),
+            Icon(Icons.home, color: Color(0xFF02398C)),
             SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -30,7 +30,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   ),
                   Text(
                     "PPLG XII-3",
-                    style: TextStyle(color: Colors.black54, fontSize: 12),
+                    style: TextStyle(color: Color(0xFF02398C), fontSize: 12),
                   ),
                 ],
               ),
@@ -38,7 +38,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
            SizedBox(width: 10),
            CircleAvatar(
               radius: 16,
-              backgroundColor: Colors.grey,
+              backgroundColor: Color(0xFF02398C),
               child: Icon(Icons.person, color: Colors.white),
             ),
           ],
@@ -54,19 +54,19 @@ class PanduanMengisiJurnal extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Row(
-              children: [
-                Icon(Icons.arrow_back_rounded, color: Color(0xFF1C4780), size: 16),
-                SizedBox(width: 8),
-                Text(
-                  "Kembali ke Panduan Penggunaan",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xFF1C4780),
+                children: [
+                  Icon(Icons.arrow_back, color: Color(0xFF02398C), size: 20),
+                  const SizedBox(width: 6),
+                  Text(
+                    "Kembali ke Panduan Penggunaan",
+                    style: TextStyle(
+                      color: Color(0xFF02398C),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
           ),
             
             SizedBox(height: 10),
@@ -447,7 +447,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                     color: Colors.black87,
                   ),
                   children: [
-                    TextSpan(text: "4.. Klik tombol "),
+                    TextSpan(text: "4. Klik tombol "),
                     TextSpan(
                       text: "Simpan",
                       style: TextStyle(

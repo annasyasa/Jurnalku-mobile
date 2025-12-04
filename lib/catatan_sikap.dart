@@ -213,159 +213,184 @@ class CatatanSikapPage extends StatelessWidget {
                 ],
               ),
             ),
-            // bagian tabel catatan sikap
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.only(top: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.grey.shade300),
+            SizedBox(height: 20),
+            ExpansionTile(
+              initiallyExpanded: false,
+              tilePadding: EdgeInsets.zero,
+              childrenPadding: EdgeInsets.zero,
+              title: Text(
+                "Detail Catatan Sikap",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
               ),
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  double minWidth = 900; // min lebar tabel
-                  double tableWidth = constraints.maxWidth > minWidth
-                      ? constraints.maxWidth
-                      : minWidth;
-                  return SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: SizedBox(
-                      width: tableWidth,
-                      child: Column(
+
+              children: [
+                SizedBox(height: 10),
+
+                // Jika data kosong
+                Center(
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.grey.shade400,
+                            width: 2,
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.check,
+                          color: Colors.grey.shade500,
+                          size: 28,
+                        ),
+                      ),
+                      SizedBox(height: 14),
+                      Text(
+                        "Tidak ada catatan",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF4A4A4A),
+                        ),
+                      ),
+                      SizedBox(height: 6),
+                      Text(
+                        "Belum ada catatan sikap yang dilaporkan",
+                        style: TextStyle(fontSize: 13, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 20),
+
+                // ==========================
+                // CARD 1 (tanpa widget tambahan)
+                // ==========================
+                Container(
+                  margin: EdgeInsets.only(bottom: 16),
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.grey.shade300),
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Kedisiplinan",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+
+                      SizedBox(height: 8),
+
+                      Text(
+                        "Sering terlambat masuk kelas",
+                        style: TextStyle(fontSize: 14),
+                      ),
+
+                      SizedBox(height: 12),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // HEADER
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 14,
-                              horizontal: 8,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade100,
-                              borderRadius: const BorderRadius.vertical(
-                                top: Radius.circular(12),
-                              ),
-                            ),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  flex: 1,
-                                  child: Text(
-                                    "NO",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 2,
-                                  child: Text(
-                                    "KATEGORI",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 3,
-                                  child: Text(
-                                    "CATATAN",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 2,
-                                  child: Text(
-                                    "STATUS",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 2,
-                                  child: Text(
-                                    "DILAPORKAN",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 2,
-                                  child: Text(
-                                    "UPDATE TERAKHIR",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Text(
-                                    "AKSI",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                          Text(
+                            "Status: Dalam Perbaikan",
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: Colors.grey[700],
                             ),
                           ),
-                          // no data
-                          Container(
-                            padding: EdgeInsets.symmetric(vertical: 40),
-                            child: Column(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: Colors.grey.shade400,
-                                      width: 2,
-                                    ),
-                                  ),
-                                  child: Icon(
-                                    Icons.check,
-                                    color: Colors.grey.shade500,
-                                    size: 28,
-                                  ),
-                                ),
-                                SizedBox(height: 14),
-                                Text(
-                                  "Tidak ada catatan",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF4A4A4A),
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                                Text(
-                                  "Belum ada catatan sikap yang dilaporkan",
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          Icon(Icons.more_horiz, color: Colors.grey[600]),
                         ],
                       ),
-                    ),
-                  );
-                },
-              ),
+
+                      SizedBox(height: 6),
+
+                      Text(
+                        "Dilaporkan: 12 Jan 2025",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
+                      Text(
+                        "Update Terakhir: 15 Jan 2025",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
+                    ],
+                  ),
+                ),
+
+                // ==========================
+                // CARD 2
+                // ==========================
+                Container(
+                  margin: EdgeInsets.only(bottom: 16),
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.grey.shade300),
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Kerjasama",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+
+                      SizedBox(height: 8),
+
+                      Text(
+                        "Tidak mau kerja kelompok",
+                        style: TextStyle(fontSize: 14),
+                      ),
+
+                      SizedBox(height: 12),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Status: Sudah Berubah",
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: Colors.grey[700],
+                            ),
+                          ),
+                          Icon(Icons.more_horiz, color: Colors.grey[600]),
+                        ],
+                      ),
+
+                      SizedBox(height: 6),
+
+                      Text(
+                        "Dilaporkan: 5 Jan 2025",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
+                      Text(
+                        "Update Terakhir: 11 Jan 2025",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 10),
+              ],
             ),
           ],
         ),

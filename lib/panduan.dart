@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jurnalku_mobile/panduanpengguna/kelengkapan_profile.dart';
 import 'package:jurnalku_mobile/panduanpengguna/mengelola_portofolio.dart';
+import 'package:jurnalku_mobile/panduanpengguna/catatan_sikap.dart';
+import 'package:jurnalku_mobile/panduanpengguna/mengelola_sertifikat.dart';
 
 import 'package:jurnalku_mobile/panduanpengguna/panduan_mengisi_jurnal.dart';
 import 'package:jurnalku_mobile/panduanpengguna/unggah_profile.dart';
@@ -176,7 +178,12 @@ class PanduanPengguna extends StatelessWidget {
                 ],
               ),
               child: GestureDetector(
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const GantiPassword())),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const GantiPassword(),
+                  ),
+                ),
                 child: Row(
                   children: [
                     Container(
@@ -413,39 +420,47 @@ class PanduanPengguna extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFEEF4FF),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Icon(
-                      Icons.checklist_outlined,
-                      size: 26,
-                      color: Color(0xFF1C4780),
-                    ),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MengelolaSertifikatPage(),
                   ),
-                  SizedBox(width: 12),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Mengelola Sertifikat",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFEEF4FF),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Icon(
+                        Icons.checklist_outlined,
+                        size: 26,
+                        color: Color(0xFF1C4780),
+                      ),
+                    ),
+                    SizedBox(width: 12),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Mengelola Sertifikat",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "Panduan untuk mengunggah profile pengguna",
-                        style: TextStyle(fontSize: 13, color: Colors.black54),
-                      ),
-                    ],
-                  ),
-                ],
+                        SizedBox(height: 4),
+                        Text(
+                          "Panduan untuk mengunggah profile pengguna",
+                          style: TextStyle(fontSize: 13, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -463,39 +478,47 @@ class PanduanPengguna extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFEEF4FF),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Icon(
-                      Icons.info_outline,
-                      size: 26,
-                      color: Color(0xFF1C4780),
-                    ),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CatatanSikap(),
                   ),
-                  SizedBox(width: 12),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Catatan Sikap Saya",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFEEF4FF),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Icon(
+                        Icons.info_outline,
+                        size: 26,
+                        color: Color(0xFF1C4780),
+                      ),
+                    ),
+                    SizedBox(width: 12),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Catatan Sikap Saya",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        "Panduan untuk mengunggah profile pengguna",
-                        style: TextStyle(fontSize: 13, color: Colors.black54),
-                      ),
-                    ],
-                  ),
-                ],
+                        SizedBox(height: 4),
+                        Text(
+                          "Panduan untuk mengunggah profile pengguna",
+                          style: TextStyle(fontSize: 13, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

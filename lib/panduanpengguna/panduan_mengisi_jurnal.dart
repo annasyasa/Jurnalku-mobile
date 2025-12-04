@@ -99,7 +99,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
               style: TextStyle(
                 fontSize: 15,
                 height: 1.5,
-                color: Colors.black87,
+                color:Color(0xFF4B5563),
               ),
             ),
 
@@ -120,7 +120,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.5,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -130,7 +130,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "1. Pilih menu "),
@@ -164,7 +164,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.6,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -194,7 +194,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.5,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -204,7 +204,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "1. Temukan Bagian ini pada halaman "),
@@ -251,14 +251,14 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "2. Klik tombol "),
                     TextSpan(
                       text: "+ Tambah Pekerjaan",
                       style: TextStyle(
-                        color: Colors.black87,
+                        color:Color(0xFF4B5563),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -273,7 +273,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.6,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -283,14 +283,14 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "4. Klik tombol "),
                     TextSpan(
                       text: "Simpan",
                       style: TextStyle(
-                        color: Colors.black87,
+                        color:Color(0xFF4B5563),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -305,14 +305,14 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "5. Untuk mengedit atau menghapus pekerjaan, klik tombol "),
                     TextSpan(
                       text: "Edit",
                       style: TextStyle(
-                        color: Colors.black87,
+                        color:Color(0xFF4B5563),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -320,7 +320,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                     TextSpan(
                       text: " Delete",
                       style: TextStyle(
-                        color: Colors.black87,
+                        color:Color(0xFF4B5563),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -355,7 +355,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.5,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -365,7 +365,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "1. Temukan Bagian ini pada halaman "),
@@ -412,14 +412,14 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "2. Klik tombol "),
                     TextSpan(
                       text: "+ Tambah Materi",
                       style: TextStyle(
-                        color: Colors.black87,
+                        color:Color(0xFF4B5563),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -434,7 +434,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.6,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -444,14 +444,14 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "4. Klik tombol "),
                     TextSpan(
                       text: "Simpan",
                       style: TextStyle(
-                        color: Colors.black87,
+                        color:Color(0xFF4B5563),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -476,7 +476,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.5,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -486,7 +486,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.6,
-                    color: Colors.black87,
+                    color:Color(0xFF4B5563),
                   ),
                   children: [
                     TextSpan(text: "1. Temukan Bagian ini pada halaman "),
@@ -533,7 +533,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.6,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -543,7 +543,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.6,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
 
@@ -553,7 +553,7 @@ class PanduanMengisiJurnal extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.6,
-                  color: Colors.black87,
+                  color:Color(0xFF4B5563),
                 ),
               ),
           ],

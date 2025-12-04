@@ -99,7 +99,7 @@ class KelengkapanProfile extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 height: 1.5,
-                color: Colors.black87,
+                color:Color(0xFF4B5563),
               ),
             ),
 
@@ -109,7 +109,7 @@ class KelengkapanProfile extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 height: 1.5,
-                color: Colors.black87,
+                color:Color(0xFF4B5563),
               ),
             ),
 
@@ -129,11 +129,11 @@ class KelengkapanProfile extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 height: 1.5,
-                color: Colors.black87,
+                color:Color(0xFF4B5563),
               ),
             ),
 
-            SizedBox(height: 16),
+           SizedBox(height: 16),
             Text(
               "1. Upload CV (Curriculum Vitae)",
               style: TextStyle(
@@ -143,11 +143,25 @@ class KelengkapanProfile extends StatelessWidget {
             ),
 
             SizedBox(height: 6),
-            Text(
-              "• Klik tombol \"Upload CV\" pada bagian Curriculum Vitae\n"
-              "• Pilih file CV Anda (format: PDF, DOC, DOCX, maksimal 4MB)\n"
-              "• File akan otomatis terupload setelah dipilih",
-              style: TextStyle(fontSize: 16, height: 1.6),
+            RichText(
+              text: TextSpan(
+                style: TextStyle(fontSize: 16, height: 1.6, color:Color(0xFF4B5563)),
+                children: [
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Klik tombol "),
+                  TextSpan(
+                    text: "\"Upload CV\"",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: " pada bagian Curriculum Vitae\n"),
+
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Pilih file CV Anda (format: PDF, DOC, DOCX, maksimal 4MB)\n"),
+
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• File akan otomatis terupload setelah dipilih"),
+                ],
+              ),
             ),
 
             SizedBox(height: 16),
@@ -160,16 +174,30 @@ class KelengkapanProfile extends StatelessWidget {
             ),
 
             SizedBox(height: 6),
+            RichText(
+              text: TextSpan(
+                style: TextStyle(fontSize: 16, height: 1.6, color:Color(0xFF4B5563)),
+                children: [
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Klik tombol "),
+                  TextSpan(
+                    text: "\"Upload Kartu Pelajar\"",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: " pada bagian Kartu Pelajar\n"),
 
-            Text(
-              "• Klik tombol \"Upload Kartu Pelajar\" pada bagian Kartu Pelajar\n"
-              "• Pilih foto/scan kartu pelajar Anda (format: PDF, JPG, PNG, maksimal 2MB)\n"
-              "• File akan otomatis terupload setelah dipilih\n\n"
-              "*Kartu pelajar hanya dapat dilihat oleh Anda dan guru",
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.6,
-                color: Colors.black87,
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Pilih foto/scan kartu pelajar Anda (format: PDF, JPG, PNG, maksimal 2MB)\n"),
+
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• File akan otomatis terupload setelah dipilih\n\n"),
+
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(
+                    text: "*Kartu pelajar hanya dapat dilihat oleh Anda dan guru",
+                    style: TextStyle(fontStyle: FontStyle.italic),
+                  ),
+                ],
               ),
             ),
 
@@ -189,56 +217,63 @@ class KelengkapanProfile extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 height: 1.5,
-                color: Colors.black87,
-              ),
-            ),
-
-            SizedBox(height: 16),
-            Text(
-              "1. Klik tombol \"Edit\" di pojok kanan atas bagian Media Sosial.",
-              style: TextStyle(
-                fontSize: 16,
+                color:Color(0xFF4B5563),
               ),
             ),
 
             SizedBox(height: 8),
-            Text(
-              "2. Modal \"Edit Media Sosial\" akan terbuka",
-              style: TextStyle(
-                fontSize: 16,
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.6,
+                    color:Color(0xFF4B5563),
+                  ),
+                  children: [
+                    TextSpan(text: "1. Klik tombol "),
+                    TextSpan(
+                      text: "\"Edit\" ",
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    TextSpan(text: "di pojok kanan atas bagian Media Sosial.\n"),
+                    TextSpan(text: "2. Modal "),
+                    TextSpan(
+                      text: "\"Edit Media Sosial\" ",
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    TextSpan(text: "akan terbuka.\n"),
+                    TextSpan(text: "3. Isi informasi media sosial:\n"),
+                    WidgetSpan(child: SizedBox(width: 8)),
+                    TextSpan(
+                      text: "• Nama Platform: ",
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    TextSpan(
+                      text: "Masukkan nama platform (Instagram, LinkedIn, GitHub, dll.)\n",
+                    ),
+                    WidgetSpan(child: SizedBox(width: 8)),
+                    TextSpan(
+                      text: "• URL: ",
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    TextSpan(
+                      text: "Masukkan link lengkap profil media sosial Anda\n",
+                    ),
+                    TextSpan(text: "4. Untuk menambah platform lain, klik "),
+                    TextSpan(
+                      text: "\"Tambah Media Sosial\"",
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    TextSpan(text: ".\n"),
+                    TextSpan(text: "5. Klik "),
+                    TextSpan(
+                      text: "\"Simpan Perubahan\" ",
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    TextSpan(text: "untuk menyimpan."),
+                  ],
+                ),
               ),
-            ),
-
-            SizedBox(height: 8),
-            Text(
-              "3. Isi informasi media sosial:",
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-
-            SizedBox(height: 8),
-            Text(
-              "• Nama Platform: Masukkan nama platform (Instagram, LinkedIn, GitHub, dll.)\n"
-              "• URL: Masukkan link lengkap profil media sosial Anda",
-              style: TextStyle(fontSize: 16, height: 1.6),
-            ),
-
-            SizedBox(height: 8),
-            Text(
-              "4. Untuk menambah platform lain, klik \"Tambah Media Sosial\"",
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-
-            SizedBox(height: 8),
-            Text(
-              "5. Klik \"Simpan Perubahan\" untuk menyimpan",
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
 
             SizedBox(height: 20),
             Text(
@@ -251,13 +286,16 @@ class KelengkapanProfile extends StatelessWidget {
             ),
 
             SizedBox(height: 16),
-            Text(
-              "• Pastikan file yang diupload tidak melebihi batas ukuran maksimal\n"
-              "• Gunakan URL lengkap untuk media sosial (dimulai dengan https://)\n"
-              "• Profil yang lengkap akan membantu guru dan teman-teman mengenal Anda lebih baik\n"
-              "• Periksa kembali informasi yang dimasukkan sebelum menyimpan",
-
-              style: TextStyle(fontSize: 16, height: 1.6),
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Text(
+                "• Pastikan file yang diupload tidak melebihi batas ukuran maksimal\n"
+                "• Gunakan URL lengkap untuk media sosial (dimulai dengan https://)\n"
+                "• Profil yang lengkap akan membantu guru dan teman-teman mengenal Anda lebih baik\n"
+                "• Periksa kembali informasi yang dimasukkan sebelum menyimpan",
+              
+                style: TextStyle(fontSize: 16, height: 1.6),
+              ),
             ),
           ],
         ),

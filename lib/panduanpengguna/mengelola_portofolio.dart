@@ -24,7 +24,7 @@ class MengelolaPortofolio extends StatelessWidget {
                     "Mochamad Reivaldy Zaen",
                     style: TextStyle(
                       color: Color(0xFF1C4780),
-                      fontSize: 16,
+                      fontSize: 15,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -61,8 +61,8 @@ class MengelolaPortofolio extends StatelessWidget {
                     "Kembali ke Panduan Penggunaan",
                     style: TextStyle(
                       color: Color(0xFF02398C),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ],
@@ -97,9 +97,9 @@ class MengelolaPortofolio extends StatelessWidget {
             Text(
               " Panduan ini memberikan langkah-langkah untuk menambah, mengedit, dan menghapus portfolio siswa.",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 15,
                 height: 1.5,
-                color: Colors.black87,
+                color: Color(0xFF4B5563),
               ),
             ),
 
@@ -113,94 +113,78 @@ class MengelolaPortofolio extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 12),
+            SizedBox(height: 8),
               Text(
                 "Berikut adalah langkah-langkah untuk menambahkan portfolio baru:",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 15,
                   height: 1.5,
-                  color: Colors.black87,
+                  color: Color(0xFF4B5563),
                 ),
               ),
 
-            SizedBox(height: 10),
-              RichText(
-                text: TextSpan(
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1.6,
-                    color: Colors.black87,
-                  ),
-                  children: [
-                    TextSpan(text: "1. Buka profil Anda (klik foto profil atau nama Anda), kemudian klik tab "),
-                    TextSpan(
-                      text: "Portofolio \n",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: "2. Klik tombol "),
-                    TextSpan(
-                      text: "+ Tambah Portfolio. \n",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: "3. Isi form yang muncul dengan detail berikut: \n"),
-                    TextSpan(
-                      text: "• Judul Portfolio: ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: "Nama project/portfolio (wajib, maks 255 karakter)\n"),
-                    TextSpan(
-                      text: "• Deskripsi: ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: "Penjelasan detail tentang project (wajib)\n"),
-                    TextSpan(
-                      text: "• Durasi Pengerjaan ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: "  Waktu pengerjaan, contoh: \"3 bulan\", \"2 minggu\" (wajib, maks 255 karakter)\n"),
-                    TextSpan(
-                      text: "• Link Portofolio ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: "URL project jika ada (opsional, harus URL valid)\n"),
-                    TextSpan(
-                      text: "• Gambar Portofolio ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: "Screenshot atau foto project (opsional, maks 2MB)\n"),
-                    TextSpan(text: "4. Klik tombol"),
-                    TextSpan(
-                      text: "Simpan",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: " untuk menyimpan portofolio."),
-                  ],
+           SizedBox(height: 5),
+           Padding(
+            padding: const EdgeInsets.only(left: 8),
+            child: RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: 15,
+                  height: 1.6,
+                  color: Color(0xFF4B5563),
                 ),
+                children: [
+                  TextSpan(text: "1. Buka profil Anda (klik foto profil atau nama Anda), kemudian klik tab "),
+                  TextSpan(
+                    text: "Portofolio \n",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: "2. Klik tombol "),
+                  TextSpan(
+                    text: "+ Tambah Portfolio. \n",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: "3. Isi form yang muncul dengan detail berikut:\n"),
+                  WidgetSpan(child: SizedBox(width: 20)),
+                  TextSpan(
+                    text: "• Judul Portfolio: ",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: "Nama project/portfolio (wajib, maks 255 karakter)\n"),
+                  WidgetSpan(child: SizedBox(width: 20)),
+                  TextSpan(
+                    text: "• Deskripsi: ",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: "Penjelasan detail tentang project (wajib)\n"),
+                  WidgetSpan(child: SizedBox(width: 20)),
+                  TextSpan(
+                    text: "• Durasi Pengerjaan ",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: "Waktu pengerjaan, contoh: \"3 bulan\", \"2 minggu\" (wajib, maks 255 karakter)\n"),
+                  WidgetSpan(child: SizedBox(width: 20)),
+                  TextSpan(
+                    text: "• Link Portofolio ",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: "URL project jika ada (opsional, harus URL valid)\n"),
+                  WidgetSpan(child: SizedBox(width: 20)),
+                  TextSpan(
+                    text: "• Gambar Portofolio ",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: "Screenshot atau foto project (opsional, maks 2MB)\n"),
+                  TextSpan(text: "4. Klik tombol "),
+                  TextSpan(
+                    text: "Simpan",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(text: " untuk menyimpan portofolio."),
+                ],
               ),
+             ),
+           ),
 
             SizedBox(height: 16),
             Text(
@@ -212,40 +196,52 @@ class MengelolaPortofolio extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 10),
-            RichText(
-                text: TextSpan(
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1.6,
-                    color: Colors.black87,
-                  ),
-                  children: [
-                    TextSpan(text: "Berikut adalah langkah-langkah untuk mengedit portfolio: \n"),
-                    TextSpan(text: "1. Temukan portfolio yang ingin diedit pada halaman Portfolio. \n"),
-                    TextSpan(text: "2. Klik ikon "),
-                    TextSpan(
-                      text: "pensil (✏️)",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: " pada card portfolio yang ingin diedit.\n"),
-                    TextSpan(text: "3. Modal edit akan terbuka dengan data yang sudah terisi. \n"),
-                    TextSpan(text: "4. Ubah data yang diperlukan sesuai kebutuhan. \n"),
-                    TextSpan(text: "5. Klik tombol "),
-                    TextSpan(
-                      text: "Update",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: " untuk menyimpan perubahan."),
-                  ],
+            SizedBox(height: 8),
+              Text(
+                "Berikut adalah langkah-langkah untuk mengedit portfolio: ",
+                style: TextStyle(
+                  fontSize: 15,
+                  height: 1.6,
+                  color: Color(0xFF4B5563),
                 ),
               ),
+
+            SizedBox(height: 5),
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontSize: 15,
+                      height: 1.6,
+                      color: Color(0xFF4B5563),
+                    ),
+                    children: [
+                      TextSpan(text: "1. Temukan portfolio yang ingin diedit pada halaman Portfolio. \n"),
+                      TextSpan(text: "2. Klik ikon "),
+                      TextSpan(
+                        text: "pensil (✏️)",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(text: " pada card portfolio yang ingin diedit.\n"),
+                      TextSpan(text: "3. Modal edit akan terbuka dengan data yang sudah terisi. \n"),
+                      TextSpan(text: "4. Ubah data yang diperlukan sesuai kebutuhan. \n"),
+                      TextSpan(text: "5. Klik tombol "),
+                      TextSpan(
+                        text: "Update",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(text: " untuk menyimpan perubahan."),
+                    ],
+                  ),
+                ),
+            ),
             
             SizedBox(height: 16),
             Text(
@@ -258,45 +254,60 @@ class MengelolaPortofolio extends StatelessWidget {
             ),
 
             SizedBox(height: 10),
-            RichText(
-                text: TextSpan(
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1.6,
-                    color: Colors.black87,
-                  ),
-                  children: [
-                    TextSpan(text: "Berikut adalah langkah-langkah untuk menghapus portfolio: \n"),
-                    TextSpan(text: "1. Temukan portfolio yang ingin dihapus pada halaman Portfolio. \n"),
-                    TextSpan(text: "2. Klik ikon "),
-                    TextSpan(
-                      text: "tempat sampah (🗑️)",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: " pada card portfolio.\n"),
-                    TextSpan(text: "3. Konfirmasi penghapusan akan muncul. \n"),
-                    TextSpan(text: "4. Klik tombol "),
-                    TextSpan(
-                      text: "Ya, Hapus",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: " untuk menghapus portofolio.\n"),
-                    TextSpan(
-                      text: "⚠️ Catatan Penting: Penghapusan portfolio bersifat permanen dan tidak dapat dibatalkan.",
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
+            Text(
+              "Berikut adalah langkah-langkah untuk menghapus portfolio:",
+              style: TextStyle(
+                fontSize: 15,
+                height: 1.6,
+                color: Color(0xFF4B5563),
               ),
+            ),
+
+            SizedBox(height: 5),
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontSize: 15,
+                      height: 1.6,
+                      color: Color(0xFF4B5563),
+                    ),
+                    children: [
+                      TextSpan(text: "1. Temukan portfolio yang ingin dihapus pada halaman Portfolio. \n"),
+                      TextSpan(text: "2. Klik ikon "),
+                      TextSpan(
+                        text: "tempat sampah (🗑️)",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(text: " pada card portfolio.\n"),
+                      TextSpan(text: "3. Konfirmasi penghapusan akan muncul. \n"),
+                      TextSpan(text: "4. Klik tombol "),
+                      TextSpan(
+                        text: "Ya, Hapus",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(text: " untuk menghapus portofolio.\n"),
+                    ],
+                  ),
+                ),
+            ),
+
+            SizedBox(height: 8),
+            Text(
+              "⚠️ Catatan Penting: Penghapusan portfolio bersifat permanen dan tidak dapat dibatalkan.",
+                style: TextStyle(
+                fontSize: 14,
+                color: Colors.red,
+               fontStyle: FontStyle.italic
+              ),
+            ),
 
             SizedBox(height: 16),
             Text(
@@ -308,36 +319,54 @@ class MengelolaPortofolio extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 10),
-            RichText(
-                text: TextSpan(
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1.5,
-                    color: Colors.black87,
-                  ),
-                  children: [
-                    TextSpan(text: "Untuk melihat detail lengkap portfolio: \n"),
-                    TextSpan(text: "1. Klik tombol "),
-                    TextSpan(
-                      text: "Lihat Detail",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: " pada card portfolio.\n", style: TextStyle(height:2.3)),
-                    TextSpan(text: "2. Halaman detail akan menampilkan informasi lengkap termasuk: \n", style: TextStyle(height: 2.3)),
-                    TextSpan(text: "• Gambar portfolio (dapat diklik untuk preview ukuran penuh) \n"),
-                    TextSpan(text: "• Judul dan deskripsi lengkap \n"),
-                    TextSpan(text: "• Durasi pengerjaan \n"),
-                    TextSpan(text: "• Link portofolio \n"),
-                    TextSpan(text: "• Tanggal Ddibuat \n"),
-                    TextSpan(text: "• Portfolio lainnya dari pemilik yang sama \n"),
-                    TextSpan(text: "3. Anda dapat mengedit atau menghapus portfolio langsung dari halaman detail jika Anda adalah pemiliknya. ", style: TextStyle(height: 2.3)),
-                  ],
-                ),
+            SizedBox(height: 8),
+            Text(
+              "Untuk melihat detail lengkap portfolio: ",
+              style: TextStyle(
+                fontSize: 15,
+                height: 1.6,
+                color: Color(0xFF4B5563),
               ),
+            ),
+
+            SizedBox(height: 5),
+           Padding(
+            padding: const EdgeInsets.only(left: 8),
+            child: RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: 15,
+                  height: 1.6,
+                  color: Color(0xFF4B5563),
+                ),
+                children: [
+                  TextSpan(text: "1. Klik tombol "),
+                  TextSpan(
+                    text: "Lihat Detail",
+                    style: TextStyle(
+                      color: Color(0xFF4B5563),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  TextSpan(text: " pada card portfolio.\n"),
+                  TextSpan(text: "2. Halaman detail akan menampilkan informasi lengkap termasuk: \n"),
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Gambar portfolio (dapat diklik untuk preview ukuran penuh) \n"),
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Judul dan deskripsi lengkap \n"),
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Durasi pengerjaan \n"),
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Link portofolio \n"),
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Tanggal Dibuat \n"),
+                  WidgetSpan(child: SizedBox(width: 16)),
+                  TextSpan(text: "• Portfolio lainnya dari pemilik yang sama \n"),
+                  TextSpan(text: "3. Anda dapat mengedit atau menghapus portfolio langsung dari halaman detail jika Anda adalah pemiliknya."),
+                ],
+              ),
+            ),
+          ),
 
             SizedBox(height: 16),
             Text(
@@ -349,86 +378,112 @@ class MengelolaPortofolio extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 10),
-            RichText(
-                text: TextSpan(
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1.5,
-                    color: Colors.black87,
-                  ),
-                  children: [
-                    TextSpan(text: "Untuk membuat portfolio yang berkualitas, perhatikan hal-hal berikut: \n"),
-                    TextSpan(text: "• Gunakan judul yang jelas dan menarik (maks 255 karakter) \n", style: TextStyle(height: 2.3)),
-                    TextSpan(text: "• Tulis deskripsi yang detail dan informatif - deskripsi dapat mengandung line break untuk memudahkan pembacaan \n"),
-                    TextSpan(text: "• Isi durasi pengerjaan dengan jelas, contoh: \"2 minggu\", \"3 bulan\" \n"),
-                    TextSpan(text: "• Sertakan link project yang valid jika tersedia online (GitHub, demo live, dll) \n"),
-                    TextSpan(text: "• Upload gambar dengan kualitas baik (format: JPEG, PNG, JPG, GIF, maks 2MB) \n"),
-                    TextSpan(text: "• Pastikan semua informasi akurat dan up-to-date \n"),
-                  ],
-                ),
+            SizedBox(height: 8),
+            Text(
+              "Untuk membuat portfolio yang berkualitas, perhatikan hal-hal berikut: ",
+              style: TextStyle(
+                fontSize: 15,
+                height: 1.6,
+                color: Color(0xFF4B5563),
               ),
+            ),
 
-           SizedBox(height: 10),
-              RichText(
-                text: TextSpan(
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1.6,
-                    color: Colors.black87,
+            SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontSize: 15,
+                      height: 1.5,
+                      color: Color(0xFF4B5563),
+                    ),
+                    children: [
+                      TextSpan(text: "• Gunakan judul yang jelas dan menarik (maks 255 karakter) \n"),
+                      TextSpan(text: "• Tulis deskripsi yang detail dan informatif - deskripsi dapat mengandung line break untuk memudahkan pembacaan \n"),
+                      TextSpan(text: "• Isi durasi pengerjaan dengan jelas, contoh: \"2 minggu\", \"3 bulan\" \n"),
+                      TextSpan(text: "• Sertakan link project yang valid jika tersedia online (GitHub, demo live, dll) \n"),
+                      TextSpan(text: "• Upload gambar dengan kualitas baik (format: JPEG, PNG, JPG, GIF, maks 2MB) \n"),
+                      TextSpan(text: "• Pastikan semua informasi akurat dan up-to-date \n"),
+                    ],
                   ),
-                  children: [
-                    TextSpan(text: "Jika mengalami masalah saat mengelola portfolio: \n"),
-                    TextSpan(
-                      text: "• Judul Portfolio: ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
-                      ),
+                ),
+            ),
+
+            SizedBox(height: 16),
+            Text(
+              "F. Troubleshooting",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFF1C4780),
+              ),
+            ),
+
+            SizedBox(height: 8),
+            Text(
+              "Jika mengalami masalah saat mengelola portfolio:",
+              style: TextStyle(
+                fontSize: 15,
+                height: 1.6,
+                color: Color(0xFF4B5563)
+              ),
+            ),
+
+            SizedBox(height: 5),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontSize: 15,
+                      height: 1.6,
+                      color: Color(0xFF4B5563),
                     ),
-                    TextSpan(text: "Nama project/portfolio (wajib, maks 255 karakter)\n"),
-                    TextSpan(
-                      text: "• Deskripsi: ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
+                    children: [
+                      TextSpan(
+                        text: "• Modal tidak terbuka: ",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                          height: 1.8,
+                        ),
                       ),
-                    ),
-                    TextSpan(text: "Penjelasan detail tentang project (wajib)\n"),
-                    TextSpan(
-                      text: "• Durasi Pengerjaan ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
+                      TextSpan(text: "Refresh halaman dan coba lagi\n"),
+                      TextSpan(
+                        text: "• Error saat menyimpan: ",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    TextSpan(text: "  Waktu pengerjaan, contoh: \"3 bulan\", \"2 minggu\" (wajib, maks 255 karakter)\n"),
-                    TextSpan(
-                      text: "• Link Portofolio ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
+                      TextSpan(text: "Periksa apakah semua field wajib sudah diisi dengan benar \n"),
+                      TextSpan(
+                        text: "• Gambar tidak terupload: ",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    TextSpan(text: "URL project jika ada (opsional, harus URL valid)\n"),
-                    TextSpan(
-                      text: "• Gambar Portofolio ",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
+                      TextSpan(text: "Pastikan ukuran gambar tidak melebihi 2MB dan format yang didukung (JPG, PNG, GIF)\n"),
+                      TextSpan(
+                        text: "• Link tidak valid: ",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    TextSpan(text: "Screenshot atau foto project (opsional, maks 2MB)\n"),
-                    TextSpan(text: "4. Klik tombol"),
-                    TextSpan(
-                      text: "Simpan",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w600,
+                      TextSpan(text: "Pastikan URL dimulai dengan http:// atau https:// \n"),
+                      TextSpan(
+                        text: "• Deskripsi mengandung enter: ",
+                        style: TextStyle(
+                          color: Color(0xFF4B5563),
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    TextSpan(text: " untuk menyimpan portofolio."),
-                  ],
+                      TextSpan(text: "Sistem sekarang mendukung line break, pastikan browser Anda sudah di-refresh jika masih mengalami masalah \n"),
+                    ],
+                  ),
                 ),
               ),
 

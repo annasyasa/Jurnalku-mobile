@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:jurnalku_mobile/jurnal_pembiasaan.dart';
+import 'package:jurnalku_mobile/jurnal_pembiasaan2.dart';
 
 class KelengkapanProfile extends StatelessWidget {
  KelengkapanProfile({super.key});

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_mobile/jurnal_pembiasaan.dart';
 import 'package:jurnalku_mobile/login.dart';
 import 'package:jurnalku_mobile/progress_belajar.dart';
 import 'package:jurnalku_mobile/settings.dart';
@@ -6,7 +7,7 @@ import 'package:jurnalku_mobile/panduan.dart';
 import 'package:jurnalku_mobile/permintaan_saksi.dart';
 import 'package:jurnalku_mobile/search.dart';
 import 'package:jurnalku_mobile/table_catatansikap/catatan_sikap.dart';
-import 'package:jurnalku_mobile/jurnal_pembiasaan.dart';
+import 'package:jurnalku_mobile/jurnal_pembiasaan2.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

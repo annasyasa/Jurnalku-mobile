@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jurnalku_mobile/catatan_sikap.dart';
 import 'package:jurnalku_mobile/panduanpengguna/catatan_sikap.dart';
 import 'package:jurnalku_mobile/panduanpengguna/mengelola_sertifikat.dart';
 

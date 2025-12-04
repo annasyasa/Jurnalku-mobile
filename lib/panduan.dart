@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:jurnalku_mobile/catatan_sikap.dart';
 import 'package:jurnalku_mobile/panduanpengguna/catatan_sikap.dart';
 import 'package:jurnalku_mobile/panduanpengguna/mengelola_sertifikat.dart';
+
+import 'package:jurnalku_mobile/panduan_mengisi_jurnal.dart';
 import 'package:jurnalku_mobile/panduanpengguna/unggah_profile.dart';
 import 'package:jurnalku_mobile/panduanpengguna/ganti_password.dart';
+
 
 class PanduanPengguna extends StatelessWidget {
   const PanduanPengguna({super.key});
@@ -242,6 +245,11 @@ class PanduanPengguna extends StatelessWidget {
                   ),
                 ],
               ),
+              child:GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PanduanMengisiJurnal())
+                  );
+                },
               child: Row(
                 children: [
                   Container(
@@ -275,6 +283,7 @@ class PanduanPengguna extends StatelessWidget {
                     ],
                   ),
                 ],
+              ),
               ),
             ),
             SizedBox(height: 20),

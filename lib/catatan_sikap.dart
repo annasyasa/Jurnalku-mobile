@@ -1,8 +1,31 @@
 import 'package:flutter/material.dart';
 
 class CatatanSikapPage extends StatelessWidget {
-  const CatatanSikapPage({super.key});
+  CatatanSikapPage({super.key});
 
+  final List<Map<String, dynamic>> dummyCatatan = [
+    {
+      "judul": "Kedisiplinan",
+      "deskripsi": "Sering terlambat masuk kelas",
+      "status": "Dalam Perbaikan",
+      "tgl_lapor": "12 Jan 2025",
+      "tgl_update": "15 Jan 2025",
+    },
+    {
+      "judul": "Kerjasama",
+      "deskripsi": "Tidak mau kerja kelompok",
+      "status": "Sudah Berubah",
+      "tgl_lapor": "5 Jan 2025",
+      "tgl_update": "11 Jan 2025",
+    },
+    {
+      "judul": "Sopan Santun",
+      "deskripsi": "Kurang menghargai teman saat berbicara",
+      "status": "Dalam Perbaikan",
+      "tgl_lapor": "3 Jan 2025",
+      "tgl_update": "7 Jan 2025",
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,183 +237,71 @@ class CatatanSikapPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            ExpansionTile(
-              initiallyExpanded: false,
-              tilePadding: EdgeInsets.zero,
-              childrenPadding: EdgeInsets.zero,
-              title: Text(
-                "Detail Catatan Sikap",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
-                ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.grey.shade300),
               ),
-
-              children: [
-                SizedBox(height: 10),
-
-                // Jika data kosong
-                Center(
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.grey.shade400,
-                            width: 2,
-                          ),
-                        ),
-                        child: Icon(
-                          Icons.check,
-                          color: Colors.grey.shade500,
-                          size: 28,
-                        ),
-                      ),
-                      SizedBox(height: 14),
-                      Text(
-                        "Tidak ada catatan",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF4A4A4A),
-                        ),
-                      ),
-                      SizedBox(height: 6),
-                      Text(
-                        "Belum ada catatan sikap yang dilaporkan",
-                        style: TextStyle(fontSize: 13, color: Colors.grey),
-                      ),
-                    ],
+              child: ExpansionTile(
+                tilePadding: EdgeInsets.all(10),
+                childrenPadding: EdgeInsets.zero,
+                iconColor: Colors.black,
+                collapsedIconColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                collapsedShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                title: Text(
+                  "Detail Catatan Sikap",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
                   ),
                 ),
 
-                SizedBox(height: 20),
+                children: [
+                  SizedBox(height: 10),
 
-                // ==========================
-                // CARD 1 (tanpa widget tambahan)
-                // ==========================
-                Container(
-                  margin: EdgeInsets.only(bottom: 16),
-                  padding: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.grey.shade300),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Kedisiplinan",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
-                        ),
+                  ...dummyCatatan.map(
+                    (item) => Container(
+                      margin: EdgeInsets.only(bottom: 16),
+                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey.shade300),
                       ),
-
-                      SizedBox(height: 8),
-
-                      Text(
-                        "Sering terlambat masuk kelas",
-                        style: TextStyle(fontSize: 14),
-                      ),
-
-                      SizedBox(height: 12),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Status: Dalam Perbaikan",
+                            item["judul"],
                             style: TextStyle(
-                              fontSize: 13,
-                              color: Colors.grey[700],
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Icon(Icons.more_horiz, color: Colors.grey[600]),
-                        ],
-                      ),
-
-                      SizedBox(height: 6),
-
-                      Text(
-                        "Dilaporkan: 12 Jan 2025",
-                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
-                      ),
-                      Text(
-                        "Update Terakhir: 15 Jan 2025",
-                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
-                      ),
-                    ],
-                  ),
-                ),
-
-                // ==========================
-                // CARD 2
-                // ==========================
-                Container(
-                  margin: EdgeInsets.only(bottom: 16),
-                  padding: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.grey.shade300),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Kerjasama",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      SizedBox(height: 8),
-
-                      Text(
-                        "Tidak mau kerja kelompok",
-                        style: TextStyle(fontSize: 14),
-                      ),
-
-                      SizedBox(height: 12),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Status: Sudah Berubah",
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Colors.grey[700],
-                            ),
+                          SizedBox(height: 8),
+                          Text(item["deskripsi"]),
+                          SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Status: ${item["status"]}"),
+                            ],
                           ),
-                          Icon(Icons.more_horiz, color: Colors.grey[600]),
+                          SizedBox(height: 6),
+                          Text("Dilaporkan: ${item["tgl_lapor"]}"),
+                          Text("Update Terakhir: ${item["tgl_update"]}"),
                         ],
                       ),
-
-                      SizedBox(height: 6),
-
-                      Text(
-                        "Dilaporkan: 5 Jan 2025",
-                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
-                      ),
-                      Text(
-                        "Update Terakhir: 11 Jan 2025",
-                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-
-                SizedBox(height: 10),
-              ],
+                ],
+              ),
             ),
           ],
         ),

@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
             _buildMenu(context, Icons.settings, "Setting", const SettingsPage()),
             _buildMenu(context, Icons.account_box, "Permintaan Saksi", const PermintaanSaksi()),
             _buildMenu(context, Icons.bar_chart, "Progress", const ProgressBelajar()),
-            _buildMenu(context, Icons.note_alt, "Catatan Sikap", const CatatanSikapPage()),
+            _buildMenu(context, Icons.note_alt, "Catatan Sikap", CatatanSikapPage()),
             _buildMenu(context, Icons.search, "Search", const DirektoriSiswaPage()),
             _buildMenu(context, Icons.library_books, "Jurnal Pembiasaan", const JurnalPembiasaanPage()),
             const Divider(),

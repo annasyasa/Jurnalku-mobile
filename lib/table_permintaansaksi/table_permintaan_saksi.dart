@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PermintaanSaksi extends StatelessWidget {
-  const PermintaanSaksi({super.key});
+class TablePermintaanSaksi extends StatelessWidget {
+  const TablePermintaanSaksi({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Data Dummy yang konsisten: Pengirim + Tanggal + Status
     final List<Map<String, String>> listPermintaan = [
       {
         "pengirim": "PT Inovasi Teknologi",
@@ -88,6 +89,8 @@ class PermintaanSaksi extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
+              // Mapping data ke widget ExpansionTile
+              // Logika ini menjamin setiap kartu HANYA memiliki data tanggal miliknya sendiri
               ...listPermintaan.map((data) {
                 return Container(
                   margin: const EdgeInsets.only(bottom: 16),
@@ -106,21 +109,14 @@ class PermintaanSaksi extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Theme(
-                      data: Theme.of(
-                        context,
-                      ).copyWith(dividerColor: Colors.transparent),
+                      // Menghilangkan garis divider bawaan ExpansionTile
+                      data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
                       child: ExpansionTile(
-                        tilePadding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 8,
-                        ),
-                        childrenPadding: const EdgeInsets.fromLTRB(
-                          20,
-                          0,
-                          20,
-                          20,
-                        ),
+                        tilePadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                        childrenPadding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                         expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                        
+                        // Judul Card (Pengirim) - UNIK per item
                         title: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -142,19 +138,20 @@ class PermintaanSaksi extends StatelessWidget {
                             ),
                           ],
                         ),
+                        
+                        // Isi Expansion (Detail) - UNIK per item (Hanya data tanggal item ini)
                         children: [
-                          const Divider(
-                            height: 24,
-                            thickness: 1,
-                            color: Color(0xFFEEEEEE),
-                          ),
+                          // Divider Pertama
+                          const Divider(height: 24, thickness: 1, color: Color(0xFFEEEEEE)),
+                          
+                          // Bagian Tanggal
                           SizedBox(
                             width: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Text(
-                                  "Tanggal ",
+                                  "Tanggal Pelaksanaan",
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: Colors.black54,
@@ -162,7 +159,7 @@ class PermintaanSaksi extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
-                                  data['tanggal']!,
+                                  data['tanggal']!, // Hanya menampilkan tanggal dari item ini
                                   style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
@@ -173,19 +170,17 @@ class PermintaanSaksi extends StatelessWidget {
                             ),
                           ),
 
-                          const Divider(
-                            height: 24,
-                            thickness: 1,
-                            color: Color(0xFFEEEEEE),
-                          ),
-
+                          // Divider Kedua
+                          const Divider(height: 24, thickness: 1, color: Color(0xFFEEEEEE)),
+                          
+                          // Bagian Konfirmasi / Status (Text Biasa)
                           SizedBox(
                             width: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Text(
-                                  "Konfirmasi",
+                                  "Status Konfirmasi",
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: Colors.black54,
@@ -193,11 +188,14 @@ class PermintaanSaksi extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
-                                  data['status']!,
+                                  data['status']!, // Hanya menampilkan status dari item ini
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.black87,
+                                    // Memberikan warna berbeda sesuai status
+                                    color: data['status'] == "Ditolak" 
+                                        ? Colors.red 
+                                        : (data['status'] == "Selesai" || data['status'] == "Dikonfirmasi" ? Colors.green : Colors.black87),
                                   ),
                                 ),
                               ],

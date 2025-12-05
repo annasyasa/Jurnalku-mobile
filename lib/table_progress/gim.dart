@@ -11,7 +11,8 @@ class Gim extends StatelessWidget {
         "tanggal": "20 Oktober 2025",
         "status": "Selesai",
         "catatanGuru": "UI sudah rapi, fitur lengkap. Bagus!",
-        "catatanSiswa": "Terima kasih pak, akan saya tingkatkan lagi!"
+        "catatanSiswa": "Terima kasih pak, akan saya tingkatkan lagi!",
+        "subtitle": "Update Terbaru",
       },
       {
         "kompetensi": "Database MySQL",
@@ -19,8 +20,9 @@ class Gim extends StatelessWidget {
         "tanggal": "20 Oktober 2025",
         "status": "Proses",
         "catatanGuru": "Perlu diperbaiki pada bagian relasi tabel.",
-        "catatanSiswa": "Baik bu, segera saya revisi."
-      }
+        "catatanSiswa": "Baik bu, segera saya revisi.",
+        "subtitle": "Add Card",
+      },
     ],
     "19 Oktober 2025": [
       {
@@ -29,7 +31,8 @@ class Gim extends StatelessWidget {
         "tanggal": "19 Oktober 2025",
         "status": "Selesai",
         "catatanGuru": "Desain sangat baik dan konsisten.",
-        "catatanSiswa": "Siap pak, terima kasih."
+        "catatanSiswa": "Siap pak, terima kasih.",
+        "subtitle": "Conflik",
       },
       {
         "kompetensi": "Testing Aplikasi",
@@ -37,8 +40,9 @@ class Gim extends StatelessWidget {
         "tanggal": "19 Oktober 2025",
         "status": "Proses",
         "catatanGuru": "Beberapa bug masih ditemukan.",
-        "catatanSiswa": "Baik bu, akan saya perbaiki."
-      }
+        "catatanSiswa": "Baik bu, akan saya perbaiki.",
+        "subtitle": "Update leading",
+      },
     ],
     "18 Oktober 2025": [
       {
@@ -47,7 +51,8 @@ class Gim extends StatelessWidget {
         "tanggal": "18 Oktober 2025",
         "status": "Selesai",
         "catatanGuru": "Pengerjaan sangat rapi.",
-        "catatanSiswa": "Terima kasih pak!"
+        "catatanSiswa": "Terima kasih pak!",
+        "subtitle": "Update Terbaru",
       },
       {
         "kompetensi": "Pengujian Sistem",
@@ -55,8 +60,9 @@ class Gim extends StatelessWidget {
         "tanggal": "18 Oktober 2025",
         "status": "Belum Dikerjakan",
         "catatanGuru": "Segera dikerjakan ya.",
-        "catatanSiswa": "Baik bu, segera saya kerjakan."
-      }
+        "catatanSiswa": "Baik bu, segera saya kerjakan.",
+        "subtitle": "Update leading",
+      },
     ],
     "17 Oktober 2025": [
       {
@@ -65,7 +71,8 @@ class Gim extends StatelessWidget {
         "tanggal": "17 Oktober 2025",
         "status": "Selesai",
         "catatanGuru": "Struktur sudah bagus.",
-        "catatanSiswa": "Siap pak!"
+        "catatanSiswa": "Siap pak!",
+        "subtitle": "conflick",
       },
       {
         "kompetensi": "JavaScript Basic",
@@ -73,8 +80,9 @@ class Gim extends StatelessWidget {
         "tanggal": "17 Oktober 2025",
         "status": "Progres",
         "catatanGuru": "Masih ada error, perbaiki ya.",
-        "catatanSiswa": "Baik pak, segera diperbaiki."
-      }
+        "catatanSiswa": "Baik pak, segera diperbaiki.",
+        "subtitle": "add card",
+      },
     ],
   };
 
@@ -87,25 +95,34 @@ class Gim extends StatelessWidget {
         elevation: 1,
       ),
 
-      body: ListView(
+      body:ListView(
         padding: const EdgeInsets.all(16),
+        children: dummyData.entries.toList().asMap().entries.map((entry) {
+          int index = entry.key;
+          String tanggal = entry.value.key; 
+          List<Map<String, String>> items = entry.value.value;
 
-        children: dummyData.entries.map((entry) {
-          return _buildDateSection(entry.key, entry.value);
+          return _buildDateSection(tanggal, items, index + 1);
         }).toList(),
       ),
     );
   }
 
-  Widget _buildDateSection(String tanggal, List<Map<String, String>> items) {
+  Widget _buildDateSection(String tanggal, List<Map<String, String>> items , int nomor) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 2,
       margin: const EdgeInsets.only(bottom: 12),
 
-      child: ExpansionTile(
-        title: Text(tanggal, style: const TextStyle(fontWeight: FontWeight.bold)),
-
+       child: ExpansionTile(
+        leading: CircleAvatar(
+          child: Text(nomor.toString()),
+        ),
+        title: Text(
+          tanggal,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(items.first["subtitle"] ?? "-"),
         children: items.map((item) => _buildItemDetail(item)).toList(),
       ),
     );

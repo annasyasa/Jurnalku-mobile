@@ -5,15 +5,49 @@ class PermintaanSaksi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, String>> listPermintaan = [
+      {
+        "pengirim": "PT Inovasi Teknologi",
+        "tanggal": "20 Oktober 2025",
+        "status": "Menunggu Konfirmasi",
+      },
+      {
+        "pengirim": "CV Kreatif Digital",
+        "tanggal": "19 Oktober 2025",
+        "status": "Menunggu Konfirmasi",
+      },
+      {
+        "pengirim": "StartUp Maju Bersama",
+        "tanggal": "18 Oktober 2025",
+        "status": "Dikonfirmasi",
+      },
+      {
+        "pengirim": "Dinas Kominfo Kota",
+        "tanggal": "17 Oktober 2025",
+        "status": "Ditolak",
+      },
+      {
+        "pengirim": "Yayasan Pendidikan",
+        "tanggal": "16 Oktober 2025",
+        "status": "Selesai",
+      },
+      {
+        "pengirim": "Bengkel Koding ID",
+        "tanggal": "15 Oktober 2025",
+        "status": "Selesai",
+      },
+    ];
+
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
         automaticallyImplyLeading: false,
         title: Row(
           children: [
-            Icon(Icons.home, color: Colors.black),
-            SizedBox(width: 12),
+            const Icon(Icons.home, color: Colors.black),
+            const SizedBox(width: 12),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -33,9 +67,7 @@ class PermintaanSaksi extends StatelessWidget {
                 ],
               ),
             ),
-
             const SizedBox(width: 10),
-
             const CircleAvatar(
               radius: 16,
               backgroundColor: Colors.grey,
@@ -44,105 +76,141 @@ class PermintaanSaksi extends StatelessWidget {
           ],
         ),
       ),
-
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Permintaan Saksi",
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 4),
-            Text(
-              "Kelola permintaan menjadi saksi dari siswa lain",
-              style: TextStyle(fontSize: 14, color: Colors.black54),
-            ),
-
-            const SizedBox(height: 20),
-
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              decoration: BoxDecoration(
-                color: const Color(0xFFEAF3FF),
-                borderRadius: BorderRadius.circular(12),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "Permintaan Saksi",
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-              child: Text(
-                'Selasa, 18 November 2025',
-                style: TextStyle(
-                  color: Color(0xFF2574FF),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
+              const SizedBox(height: 20),
 
-            const SizedBox(height: 20),
-
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    "PENGIRIM",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black54,
-                    ),
+              ...listPermintaan.map((data) {
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 12,
+                        spreadRadius: 2,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
                   ),
-                ),
-                Expanded(
-                  child: Text(
-                    "TANGGAL",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black54,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Text(
-                    "KONFIRMASI",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black54,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Theme(
+                      data: Theme.of(
+                        context,
+                      ).copyWith(dividerColor: Colors.transparent),
+                      child: ExpansionTile(
+                        tilePadding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 8,
+                        ),
+                        childrenPadding: const EdgeInsets.fromLTRB(
+                          20,
+                          0,
+                          20,
+                          20,
+                        ),
+                        expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                        title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "Pengirim",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black54,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              data['pengirim']!,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ],
+                        ),
+                        children: [
+                          const Divider(
+                            height: 24,
+                            thickness: 1,
+                            color: Color(0xFFEEEEEE),
+                          ),
+                          SizedBox(
+                            width: double.infinity,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Tanggal ",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.black54,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  data['tanggal']!,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
 
-            SizedBox(height: 50),
+                          const Divider(
+                            height: 24,
+                            thickness: 1,
+                            color: Color(0xFFEEEEEE),
+                          ),
 
-            Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.group_outlined, size: 48, color: Colors.black38),
-                    SizedBox(height: 15),
-                    Text(
-                      "Belum ada permintaan",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black87,
+                          SizedBox(
+                            width: double.infinity,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Konfirmasi",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.black54,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  data['status']!,
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Belum ada yang mengirim permintaan saksi kepada Anda",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 13, color: Colors.black45),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+                  ),
+                );
+              }).toList(),
+            ],
+          ),
         ),
       ),
     );

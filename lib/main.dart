@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:jurnalku_mobile/jurnal_pembiasaan.dart';
 import 'package:jurnalku_mobile/panduanpengguna/panduan_mengisi_jurnal.dart';
+import 'package:jurnalku_mobile/profile.dart';
 import 'home.dart';
+import 'package:jurnalku_mobile/dashboard.dart';
+
 // import 'package:jurnalku_mobile/search.dart';
 
 void main() {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Jurnalku',
 
-      home: Home(),
+      home: ProfilePage(),
     );
   }
 }

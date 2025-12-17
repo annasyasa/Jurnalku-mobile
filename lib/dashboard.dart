@@ -455,7 +455,7 @@ Widget _divider() {
                     _divider(),
                     GestureDetector(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const CatatanSikapPage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  CatatanSikapPage()));
                       },
                       child: _menuItem(
                         icon: Icons.warning_outlined,

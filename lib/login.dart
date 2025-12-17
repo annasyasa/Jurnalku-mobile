@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jurnalku_mobile/bottom_nav.dart';
+import 'package:jurnalku_mobile/dashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -171,7 +172,9 @@ class _LoginState extends State<Login> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard()));
+                      },
                       child: const Text(
                         "Masuk",
                         style: TextStyle(

@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_mobile/jurnal_pembiasaan.dart';
+import 'package:jurnalku_mobile/login.dart';
+import 'package:jurnalku_mobile/panduan.dart';
+import 'package:jurnalku_mobile/panduanpengguna/catatan_sikap.dart';
+import 'package:jurnalku_mobile/permintaan_saksi.dart';
+import 'package:jurnalku_mobile/profile.dart';
+import 'package:jurnalku_mobile/progress_belajar.dart';
+import 'package:jurnalku_mobile/search.dart';
+import 'package:jurnalku_mobile/settings.dart';
+import 'package:jurnalku_mobile/table_catatansikap/catatan_sikap.dart';
+
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -67,6 +78,31 @@ Widget _divider() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: Drawer(
+    child: ListView(
+      children: [
+        ListTile(title: Text("Dashboard"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard()));},),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Profile"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));}),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Search"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => DirektoriSiswaPage()));}),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Jurnal Pembiasaan"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => JurnalPembiasaanPage()));}),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Permintaan Saksi"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => PermintaanSaksi()));}),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Progress"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ProgressBelajar()));}),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Catatan Sikap"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => CatatanSikapPage()));}),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Panduan Pengguna"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => PanduanPengguna()));}),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Pengaturan Akun"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()));}),
+        Divider(color: Colors.grey[400]),
+        ListTile(title: Text("Log Out"), onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));}),
+      ],
+    ),
+  ),
        appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
@@ -339,10 +375,15 @@ Widget _divider() {
                 ),
                 child: Column(
                   children: [
-                    _menuItem(
-                      icon: Icons.person_outline,
-                      title: "Profil",
-                      subtitle: "Lihat dan kelola profilmu di sini.",
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilePage()));
+                      },
+                      child: _menuItem(
+                        icon: Icons.person_outline,
+                        title: "Profil",
+                        subtitle: "Lihat dan kelola profilmu di sini.",
+                      ),
                     ),
                     _divider(),
                     _menuItem(
@@ -379,28 +420,48 @@ Widget _divider() {
                 ),
                 child: Column(
                   children: [
-                    _menuItem(
-                      icon: Icons.book_outlined,
-                      title: "Jurnal Pembiasaan",
-                      subtitle: "Catat dan pantau kegiatan pembiasaan harianmu.",
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const JurnalPembiasaanPage()));
+                      },
+                      child: _menuItem(
+                        icon: Icons.book_outlined,
+                        title: "Jurnal Pembiasaan",
+                        subtitle: "Catat dan pantau kegiatan pembiasaan harianmu.",
+                      ),
                     ),
                     _divider(),
-                    _menuItem(
-                      icon: Icons.group_outlined,
-                      title: "Permintaan Saksi",
-                      subtitle: "Lihat teman yang mengajukan permintaan saksi.",
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const PermintaanSaksi()));
+                      },
+                      child: _menuItem(
+                        icon: Icons.group_outlined,
+                        title: "Permintaan Saksi",
+                        subtitle: "Lihat teman yang mengajukan permintaan saksi.",
+                      ),
                     ),
                     _divider(),
-                    _menuItem(
-                      icon: Icons.bar_chart_outlined,
-                      title: "Progress",
-                      subtitle: "Lihat kemajuan kompetensi dan pencapaian belajarmu.",
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ProgressBelajar()));
+                      },
+                      child: _menuItem(
+                        icon: Icons.bar_chart_outlined,
+                        title: "Progress",
+                        subtitle: "Lihat kemajuan kompetensi dan pencapaian belajarmu.",
+                      ),
                     ),
                     _divider(),
-                    _menuItem(
-                      icon: Icons.warning_outlined,
-                      title: "Catatan Sikap",
-                      subtitle: "Lihat catatan sikap dan perilaku dari guru.",
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const CatatanSikapPage()));
+                      },
+                      child: _menuItem(
+                        icon: Icons.warning_outlined,
+                        title: "Catatan Sikap",
+                        subtitle: "Lihat catatan sikap dan perilaku dari guru.",
+                      ),
                     ),
                   ],
                 ),

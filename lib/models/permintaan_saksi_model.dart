@@ -2,8 +2,7 @@ class PermintaanSaksiModel {
   final int id;
   final String pengirim;
   final String tanggal;
-  final String konfirmasi; // Sesuaikan dari 'status' ke 'konfirmasi'
-
+  final String konfirmasi; 
   PermintaanSaksiModel({
     required this.id,
     required this.pengirim,
@@ -16,7 +15,7 @@ class PermintaanSaksiModel {
       id: json['id'] ?? 0,
       pengirim: json['pengirim'] ?? '',
       tanggal: json['tanggal'] ?? '',
-      konfirmasi: json['konfirmasi'] ?? 'pending', // Ambil key 'konfirmasi'
+      konfirmasi: json['konfirmasi'] ?? 'pending', 
     );
   }
 }

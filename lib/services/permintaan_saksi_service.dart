@@ -12,7 +12,6 @@ class PermintaanSaksiService {
       if (response.statusCode == 200) {
         final Map<String, dynamic> jsonData = jsonDecode(response.body);
         
-        // Ambil list dari key "data" sesuai struktur JSON Anda
         final List<dynamic> listData = jsonData['data']; 
         
         return listData.map((item) => PermintaanSaksiModel.fromJson(item)).toList();
